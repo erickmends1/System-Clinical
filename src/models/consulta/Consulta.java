@@ -7,25 +7,25 @@ import models.pessoa.Aluno;
 import models.pessoa.Paciente;
 import models.pessoa.Funcionario;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Consulta {
     private long idConsulta;
-    private LocalDate dataHora;
-    private long codigoAtendimento;
+    private LocalDateTime dataHora;
+    private Integer codigoAtendimento;
     private TipoConsulta tipo;
     private StatusConsulta status;
     private String observacao;
-    private Paciente nivelSatisfacao;
+    private Integer nivelSatisfacao;
     private Paciente paciente;
     private ClasseRisco classeRisco;
     private Aluno aluno;
     private Funcionario funcionario;
 
-    public Consulta(long idConsulta, String dataHora, long codigoAtendimento, TipoConsulta tipo, Paciente paciente, ClasseRisco classeRisco, Aluno aluno, Funcionario funcionario) {
+    public Consulta(long idConsulta, String dataHora, Integer codigoAtendimento, TipoConsulta tipo, Paciente paciente, ClasseRisco classeRisco, Aluno aluno, Funcionario funcionario) {
         this.idConsulta = idConsulta;
-        this.dataHora = LocalDate.parse(dataHora, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        this.dataHora = LocalDateTime.parse(dataHora, DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"));
         this.codigoAtendimento = codigoAtendimento;
         this.tipo = tipo;
         this.status = StatusConsulta.AGENDADA;
@@ -41,19 +41,19 @@ public class Consulta {
         return idConsulta;
     }
 
-    public LocalDate getDataHora() {
+    public LocalDateTime getDataHora() {
         return dataHora;
     }
 
-    public void setDataHora(LocalDate dataHora) {
+    public void setDataHora(LocalDateTime dataHora) {
         this.dataHora = dataHora;
     }
 
-    public long getCodigoAtendimento() {
+    public Integer getCodigoAtendimento() {
         return codigoAtendimento;
     }
 
-    public void setCodigoAtendimento(long codigoAtendimento) {
+    public void setCodigoAtendimento(Integer codigoAtendimento) {
         this.codigoAtendimento = codigoAtendimento;
     }
 
@@ -81,11 +81,11 @@ public class Consulta {
         this.observacao = observacao;
     }
 
-    public Paciente getNivelSatisfacao() {
+    public Integer getNivelSatisfacao() {
         return nivelSatisfacao;
     }
 
-    public void setNivelSatisfacao(Paciente nivelSatisfacao) {
+    public void setNivelSatisfacao(Integer nivelSatisfacao) {
         this.nivelSatisfacao = nivelSatisfacao;
     }
 
@@ -123,8 +123,7 @@ public class Consulta {
 
     @Override
     public String toString() {
-        return "Consulta: "
-                + "\nId: " + this.getIdConsulta()
+        return "Id: " + this.getIdConsulta()
                 + "\nData: " + this.getDataHora()
                 + "\nCódigo Atendimento: " + this.getCodigoAtendimento()
                 + "\nTipo: " + this.getTipo()
