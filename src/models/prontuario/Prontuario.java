@@ -4,13 +4,14 @@ import models.consulta.Consulta;
 import models.pessoa.Paciente;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Prontuario {
     private long idProntuario;
     private LocalDateTime dataCriacao;
-    private List<Consulta> consultas;
     private Paciente paciente;
+    private List<Consulta> consultas = new ArrayList<>();
 
 
     public Prontuario(long idProntuario) {
