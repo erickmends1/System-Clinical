@@ -11,7 +11,6 @@ public class FuncionarioDAO implements DAO<Funcionario>{
     private List<Funcionario> funcionarios = new ArrayList<>();
 
     public FuncionarioDAO() {
-        this.funcionarios.add(new Funcionario("Erick Mendes", "16/07/2004", "12345678900", "erick.mendes@clinical.org", 1, "admin", "admin", Perfil.ADMIN));
         this.funcionarios.add(new Funcionario("Nathaly Gusmão", "18/11/2006", "12345678901", "nathaly.gusmao@clinical.org", 2, "nathaly18", "naty18", Perfil.ATENDENTE));
     }
 

@@ -10,7 +10,6 @@ public class LoginView {
     private Funcionario fun = null ;
     private LoginController loginController = new LoginController();
 
-    private AppMenu appMenu = new AppMenu(fun);
 
     public void exibirLogin(){
         while (fun == null){
@@ -31,11 +30,11 @@ public class LoginView {
         switch (fun.getPerfil()){
             case ADMIN:
                 System.out.println("Usuario: "+ fun.getPerfil());
-                appMenu.exibirMenuAdministrador();
+                System.out.println("Menu...");
                 break;
             case ATENDENTE:
                 System.out.println("Usuario: "+ fun.getPerfil());
-                appMenu.exibirMenuAtendente();
+                System.out.println("Menu...");
                 break;
             case NUTRICIONISTA:
                 System.out.println("Usuario: "+ fun.getPerfil());
