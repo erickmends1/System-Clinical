@@ -25,8 +25,7 @@ public final class Paciente extends Pessoa {
 
     @Override
     public String toString() {
-        return "Paciente:\n"
-                +"Id Paciente: "
+        return "Id Paciente: "
                 + this.getIdPaciente()
                 +", Nome: "
                 + this.getNome()
