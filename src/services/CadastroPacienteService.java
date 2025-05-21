@@ -13,12 +13,12 @@ public class CadastroPacienteService {
     private PacienteDAO pacienteDAO;
     private Funcionario funcionario;
 
-    public CadastroPacienteService(Funcionario funcionario){
+    public CadastroPacienteService(PacienteDAO pacienteDAO, Funcionario funcionario){
         this.funcionario = funcionario;
-        this.pacienteDAO = new PacienteDAO();
+        this.pacienteDAO = pacienteDAO;
     }
 
-    public void CadastrarFuncionario(String nome, String dataNacimento, String cpf, String email, long idPaciente) throws Exception {
+    public void cadastrarPaciente(String nome, String dataNacimento, String cpf, String email, long idPaciente) throws Exception {
          if(funcionario.getPerfil() == Perfil.ADMIN || funcionario.getPerfil() == Perfil.ATENDENTE ){
              Paciente paciente = new Paciente(nome, dataNacimento, cpf, email, idPaciente);
              pacienteDAO.salvar(paciente);
