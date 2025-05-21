@@ -7,7 +7,6 @@ import dao.PacienteDAO;
 import enums.Perfil;
 import models.pessoa.Funcionario;
 import models.pessoa.Paciente;
-import services.CadastroFuncionarioService;
 
 public class Program {
     public static void main(String[] args) {
